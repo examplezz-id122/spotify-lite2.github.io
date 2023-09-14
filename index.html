@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Varela+Round&display=swap"
+        rel="stylesheet">
+
+    <title>spotify-lite</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            width: 100%;
+            background-color: rgba(135, 176, 212, 0.793);
+            /* background-color: rgba(238, 238, 239, 0.156); */
+            border-radius: 2px;
+        }
+
+        .brand img {
+            width: 40px;
+            margin: -13px 2px;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .right ul li {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        .right a:hover {
+            color: rgb(178, 72, 213);
+            font-size: 1.7rem;
+        }
+
+        .left {
+            margin: 0 32px;
+            text-transform: capitalize;
+            position: relative;
+            color: black;
+        }
+
+        .left>h1 {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 100px 0;
+        }
+
+        .section>div {
+            width: 30%;
+            margin: 50px 0;
+        }
+
+        .section-left>img {
+            height: 300px;
+            border: none;
+        }
+
+        .container {
+            min-height: 80vh;
+            display: flex;
+            margin: 23px auto;
+            width: 80%;
+            background-color: rgb(7, 22, 42);
+            /* justify-content: center; */
+            /* align-items: center; */
+            border-radius: 20px;
+            padding: 20px;
+
+        }
+
+        .song-list h1 {
+            position: relative;
+        }
+
+        .song-list h1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            background-color: rgb(255, 0, 0);
+            width: 0%;
+            font-weight: bold;
+            transition: 2s;
+        }
+
+        .song-list h1:hover::after {
+            width: 100%;
+
+        }
+
+        .bottom {
+            position: sticky;
+            height: 110px;
+            background-color: black;
+            color: white;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .icon {
+            margin-top: 10px;
+        }
+
+        .icon i {
+            cursor: pointer;
+        }
+
+        #myprogess {
+            width: 80vw;
+            cursor: pointer;
+        }
+
+        .songItem img {
+            height: 80px;
+            border-radius: 220px;
+            border: 4px solid black;
+            margin: 60px 0;
+        }
+
+        .songItem {
+            height: 55px;
+            display: flex;
+            background-color: black;
+            width: 50%;
+            border-radius: 30px;
+            margin: 40px 50px;
+            justify-content: space-between;
+            align-items: center;
+            border-color: 4px solid red;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .time {
+            margin: 0 23px;
+        }
+
+        .time i {
+            cursor: pointer;
+        }
+
+        .beat {
+            position: absolute;
+            left: 10vw;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        /* .songitnecontainer{
+            position: relative;
+            left: 3%;
+            /* width: 20%;
+         } */
+
+        .beat img {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        @media screen and (max-width: 1100px) {
+            body {
+                background-color: rgb(0, 145, 255);
+            }
+
+            .songitnecontainer,
+            h3 {
+                position: relative;
+                left: 3%;
+                font-size: 8px;
+            }
+            .beat{
+                left: -2px;
+                font-weight: bolder;
+                top: 49px;
+                color: rgb(151, 90, 255);
+                font-size: smaller;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="left">
+            <h1><span class="brand"><img src="spotify.png" alt="spotify"></span>Spotify</h1>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-bell fa"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="song-list">
+            <h1>Best Song Of Xxxtentacion & Juicewrld - No Copyright Sounds</h1>
+            <div class="songitnecontainer">
+                <div class="songItem">
+                    <img alt="Xxxtentacion">
+                    <span class="songName">
+                        <h3>Look At Me</h3>
+                    </span>
+                    <span class="song-name"><span class="time">2:06 <i id="0"
+                                class="far songItemPlay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img alt="Juicewrld">
+                    <span class="songName">
+                        <h3>All Girls Are The Same</h3>
+                    </span>
+                    <span class="song-name"><span class="time">2:24<i id="1"
+                                class="far songItemPlay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img alt="Juicewrld">
+                    <span class="songName">
+                        <h3>Hear Me Call</h3>
+                    </span>
+                    <span class="song-name"><span class="time">3:09<i id="2"
+                                class="far songItemPlay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img alt="Juicewrld">
+                    <span class="songName">
+                        <h3>Robbery</h3>
+                    </span>
+                    <span class="song-name"><span class="time">4:00<i id="3"
+                                class="far songItemPlay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img alt="Juicewrld">
+                    <span class="songName">
+                        <h3>Lean Wit Me</h3>
+                    </span>
+                    <span class="song-name"><span class="time">2:52 <i id="4"
+                                class="far songItemPlay fa-play-circle"></i></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myprogess" min="0" value="0" max="100">
+        <div class="icon">
+            <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="far fa-3x fa-play-circle" id="masterplay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i>
+        </div>
+
+        <div class="beat">
+            <img src="Z23N.gif" width="23px" alt="beat" id="zero"><span id="masterSongName">Look At Me -
+                Xxxtentacion</span>
+        </div>
+
+    </div>
+    <script src="https://kit.fontawesome.com/19fbf7dd3a.js" crossorigin="anonymous"></script>
+    <script src="hole.js"></script>
+
+</body>
+
+</html>
